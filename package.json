@@ -1,0 +1,29 @@
+{
+  "name": "project-management-platform",
+  "version": "1.0.0",
+  "description": "backend API for project management platform",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apurvakumar17/project-management-platform.git"
+  },
+  "author": "Apurva Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apurvakumar17/project-management-platform/issues"
+  },
+  "homepage": "https://github.com/apurvakumar17/project-management-platform#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1"
+  }
+}
