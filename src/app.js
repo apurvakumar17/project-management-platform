@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import router1 from "./routes/healthcheck.routes.js";
 
 const app = express();
 
@@ -18,8 +17,13 @@ app.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"],
 }))
 
+// import the routes
 
-app.use("/api/v1/healthcheck", router1);
+import healthCheckRouter from "./routes/healthcheck.routes.js";
+import authRouter from "./routes/auth.routes.js";
+
+app.use("/api/v1/healthcheck", healthCheckRouter);
+app.use("/api/v1/auth", authRouter);
 
 app.get("/",(req,res)=>{
     res.send("Hello World!");

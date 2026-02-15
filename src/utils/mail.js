@@ -13,8 +13,8 @@ const sendEmail = async (options) => {
     const emailTextual = mailGenerator.generatePlaintext(options.mailgenContent)
     const emailHtml = mailGenerator.generate(options.mailgenContent)
 
-    nodemailer.createTransport({
-        host: process.env.MAILTRAP_SMTP_USER,
+    const transporter = nodemailer.createTransport({
+        host: process.env.MAILTRAP_SMTP_HOST,
         pass: process.env.MAILTRAP_SMTP_PORT,
         auth: {
             user: process.env.MAILTRAP_SMTP_USER,
@@ -33,7 +33,8 @@ const sendEmail = async (options) => {
     try {
         await transporter.sendMail(mail)
     } catch (error) {
-        console.error("Email service failed silently due to credentials maybe!")
+        console.error("Email service failed silently due to credentials maybe!");
+        console.log(error);
     }
 }
 
